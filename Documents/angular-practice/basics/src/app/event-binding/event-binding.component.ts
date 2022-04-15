@@ -7,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventBindingComponent implements OnInit {
   clicks = 0;
+  someText = "";
 
   myCoolButtonClicked () {
     console.log('Hi This button has been clicked');
     this.clicks++;
+  }
+
+  showInput(el: any){
+    console.log(el.target.value);
+    this.someText= el.target.value
   }
 
   constructor() { }

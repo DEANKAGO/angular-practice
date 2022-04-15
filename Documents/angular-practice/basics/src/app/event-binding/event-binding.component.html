@@ -1,6 +1,8 @@
 <p>event-binding works!</p>
 <!-- button click event -->
 <p>Number of button clicks: {{ clicks }}</p>
+<p>The input text: {{ someText }}</p>
 <Button class="btn btn-primary" (click)="myCoolButtonClicked()"
   >Click Me</Button
 >
+<input (input)="showInput($event)" />

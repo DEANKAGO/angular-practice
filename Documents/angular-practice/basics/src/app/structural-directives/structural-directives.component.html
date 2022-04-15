@@ -1,0 +1,30 @@
+<p>structural-directives works!</p>
+
+<h4>is our element hidden? {{ !showElement }}</h4>
+
+<button (click)="toogleElement()" class="btn btn-primary">Hide/show</button>
+
+<div *ngIf="showElement; else someElemet" class="container">
+  <h3>This should b shown if we want</h3>
+</div>
+
+<ng-template #someElemet>
+  <div>
+    <h3>Only one should be shown</h3>
+  </div>
+</ng-template>
+
+<h2>My components colors</h2>
+<div class="container" *ngFor="let color of someColors; index as i">
+  <p>color: {{ i }} is {{ color }}</p>
+</div>
+
+<h2>The github users</h2>
+<div class="container-fluid" *ngFor="let user of users; index as i">
+  <div class="m-2">
+    <div>
+      <img src= "{{ user.avatar_url }}"/>
+    </div>
+    <h4>{{ user.login }}</h4>
+  </div>
+</div>
